@@ -3,7 +3,7 @@
 cd ~/ceremonyclient/node/
 
 # Define the local branch you want to check
-local_branch="master"
+local_branch="main"
 
 # Fetch updates from the remote repository
 git fetch
@@ -13,5 +13,5 @@ if git status | grep "Your branch is up to date with 'origin/${local_branch}'" &
     :
 else
     git pull
-    ~/tmux_miner.sh
+    ~/quil/tmux_miner.sh
 fi
