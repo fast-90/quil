@@ -8,6 +8,7 @@ echo 'GOROOT=/usr/local/go' >> ~/.bashrc
 echo 'GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
+go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 
 # mkdir ~/.ssh
 git clone https://github.com/QuilibriumNetwork/ceremonyclient.git
