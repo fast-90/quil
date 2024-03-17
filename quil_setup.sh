@@ -1,6 +1,7 @@
 #!/bin/bash
+sed -i "s/#\$nrconf{kernelhints} = -1;/\$nrconf{kernelhints} = -1;/g" /etc/needrestart/needrestart.conf
 sudo apt update
-sudo apt-get install jq git tmux -y
+sudo apt-get install jq git tmux speedtest-cli transmission-cli -y
 curl -OL https://go.dev/dl/go1.20.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz
 # echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
