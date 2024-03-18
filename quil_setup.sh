@@ -19,6 +19,9 @@ git clone https://github.com/QuilibriumNetwork/ceremonyclient.git
 
 mkdir ~/ceremonyclient/node/.config
 
+cd ~/ceremonyclient/node
+GOEXPERIMENT=arenas go install  ./...
+
 echo "y" | sudo ufw enable
 sudo ufw allow 22
 sudo ufw allow 8336
