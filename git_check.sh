@@ -12,6 +12,15 @@ git fetch
 if git status | grep "Your branch is up to date with 'origin/${local_branch}'" &> /dev/null; then
     :
 else
+    service ceremonyclient stop
+    cd ~/ceremonyclient
     git pull
-    ~/quil/tmux_miner.sh
+    cd ~/ceremonyclient/node
+    GOEXPERIMENT=arenas go clean -v -n -a ./...
+    rm /root/go/bin/node
+    ls /root/go/bin
+    GOEXPERIMENT=arenas go install  ./...
+    ls /root/go/bin
+    service ceremonyclient start
+    # ~/quil/tmux_miner.sh
 fi
