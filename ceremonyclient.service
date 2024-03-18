@@ -1,0 +1,14 @@
+[Unit]
+Description=Ceremony Client Go App Service
+
+[Service]
+CPUQuota=720%
+Type=simple
+Restart=always
+RestartSec=5s
+WorkingDirectory=/root/ceremonyclient/node
+Environment=GOEXPERIMENT=arenas
+ExecStart=/root/go/bin/node ./...
+
+[Install]
+WantedBy=multi-user.target
