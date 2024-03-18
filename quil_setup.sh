@@ -17,6 +17,8 @@ go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 # mkdir ~/.ssh
 git clone https://github.com/QuilibriumNetwork/ceremonyclient.git
 
+mkdir ~/ceremonyclient/node/.config
+
 echo "y" | sudo ufw enable
 sudo ufw allow 22
 sudo ufw allow 8336
@@ -26,9 +28,9 @@ sudo ufw allow 443
 crontab ~/quil/crontabGit
 
 echo 'Running node in tmux for the first time to initiate config'
-~/quil/tmux_miner.sh
-echo 'Waiting 5m until restarting node...'
-sleep 5m
-sed -i 's/listenGrpcMultiaddr: ""/listenGrpcMultiaddr: \/ip4\/127.0.0.1\/tcp\/8337/' ~/ceremonyclient/node/.config/config.yml
-~/quil/tmux_miner.sh
+~/quil/tmux_node_log.sh
+# echo 'Waiting 5m until restarting node...'
+# sleep 5m
+# sed -i 's/listenGrpcMultiaddr: ""/listenGrpcMultiaddr: \/ip4\/127.0.0.1\/tcp\/8337/' ~/ceremonyclient/node/.config/config.yml
+# ~/quil/tmux_miner.sh
 echo 'Restarted node after changing config.'
