@@ -2,6 +2,7 @@
 sed -i "s/#\$nrconf{kernelhints} = -1;/\$nrconf{kernelhints} = -1;/g" /etc/needrestart/needrestart.conf
 sudo apt update
 sudo apt-get install jq git tmux speedtest-cli transmission-cli -y
+git clone https://github.com/fast-90/quil.git
 
 sudo cp ~/quil/ceremonyclient.service /lib/systemd/system/ceremonyclient.service
 
