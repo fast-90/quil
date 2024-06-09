@@ -3,7 +3,7 @@
 cd ~/ceremonyclient/node/
 
 # Define the local branch you want to check
-local_branch="release"
+local_branch="release-cdn"
 
 # Fetch updates from the remote repository
 git fetch
